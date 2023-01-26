@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:15.1
+    container_name: postgres15-container
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - DATABASE_HOST=127.0.0.1
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin001
+      - POSTGRES_DB=etapadb
+    volumes:
+      - /Users/apaulgallegos/Documents/docker-volumenes/postgres15:/var/lib/postgres/data:rw
