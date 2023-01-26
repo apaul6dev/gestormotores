@@ -15,23 +15,23 @@ public class EmpresaServiceImpl implements IEmpresaService {
     private IEmpresaDao dao;
 
     @Override
-    public void registrar(Empresa data) {
-        dao.save(data);
+    public void registrar(Empresa empresa) {
+        dao.save(empresa);
     }
 
     @Override
-    public void modificar(Empresa data) {
-        dao.save(data);
+    public void modificar(Empresa empresa) {
+        dao.save(empresa);
     }
 
     @Override
-    public void eliminar(int idData) {
-        dao.deleteById(idData);
+    public void eliminar(int id) {
+        dao.deleteById(id);
     }
 
     @Override
-    public Empresa listarId(int idData) {
-        Optional<Empresa> opt = dao.findById(idData);
+    public Empresa listarId(int id) {
+        Optional<Empresa> opt = dao.findById(id);
         return opt.isPresent() ? opt.get() : new Empresa();
     }
 
