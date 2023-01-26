@@ -29,12 +29,12 @@ public class EmpresaController {
     }
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Empresa> listarId(@PathVariable("id") Integer id) {
-        Empresa empresa = new Empresa();
-        empresa = service.listarId(id);
-        if (empresa == null) {
+        Empresa dato = new Empresa();
+        dato = service.listarId(id);
+        if (dato == null) {
             throw new ModeloNotFoundException("ID: " + id);
         }
-        return new ResponseEntity<Empresa>(empresa, HttpStatus.OK);
+        return new ResponseEntity<Empresa>(dato, HttpStatus.OK);
     }
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> registrar(@Validated @RequestBody Empresa data) {

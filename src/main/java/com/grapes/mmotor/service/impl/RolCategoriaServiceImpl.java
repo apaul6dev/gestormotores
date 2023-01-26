@@ -4,10 +4,11 @@ import com.grapes.mmotor.dao.IRolCategoriaDao;
 import com.grapes.mmotor.model.RolCategoria;
 import com.grapes.mmotor.service.IRolCategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class RolCategoriaServiceImpl implements IRolCategoriaService {
     @Autowired
     private IRolCategoriaDao dao;

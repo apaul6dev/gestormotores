@@ -29,4 +29,7 @@ public class Mantenimiento {
     @OneToMany(mappedBy = "mantenimiento", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.REMOVE }, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<MantenimientoDetalle> matenimientoDetalle;
+
+    @OneToOne(mappedBy = "mantenimiento")
+    private OrdenTrabajo ordenTrabajo;
 }

@@ -36,8 +36,9 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name = "id_persona", nullable = false)
     private Persona persona;
+
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "usuario_mantenimiento", joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName = "idUsuario"), inverseJoinColumns = @JoinColumn(name = "id_mantenimiento", referencedColumnName = "idMantenimiento"))
-    private List<Mantenimiento> mantenimientos;
+    @JoinTable(name = "usuario_orden_trabajo", joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName = "idUsuario"), inverseJoinColumns = @JoinColumn(name = "id_orden_trabajo", referencedColumnName = "idOrdenTrabajo"))
+    private List<OrdenTrabajo> ordenTrabajos;
 
 }

@@ -1,4 +1,6 @@
 package com.grapes.mmotor.service;
 
-public interface IUsuarioService {
+import com.grapes.mmotor.model.Usuario;
+
+public interface IUsuarioService extends ICRUD<Usuario>{
 }
