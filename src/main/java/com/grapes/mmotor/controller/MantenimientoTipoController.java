@@ -1,7 +1,6 @@
 package com.grapes.mmotor.controller;
 
 import com.grapes.mmotor.exception.ModeloNotFoundException;
-import com.grapes.mmotor.model.Empresa;
 import com.grapes.mmotor.model.MantenimientoTipo;
 import com.grapes.mmotor.service.IMantenimientoTipoService;
 import org.springframework.beans.factory.annotation.Autowired;
