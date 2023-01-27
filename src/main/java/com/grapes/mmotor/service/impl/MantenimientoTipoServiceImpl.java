@@ -8,13 +8,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class MantenimientoTipoServiceImpl implements IMantenimientoTipoService {
     @Autowired
     private IMantenimientoTipoDao dao;
+
     @Override
     public void registrar(MantenimientoTipo mantenimientoTipo) {
-dao.save(mantenimientoTipo);
+        dao.save(mantenimientoTipo);
     }
 
     @Override
@@ -30,8 +32,8 @@ dao.save(mantenimientoTipo);
 
     @Override
     public MantenimientoTipo listarId(int id) {
-        Optional<MantenimientoTipo> opt=dao.findById(id);
-        return opt.isPresent()?opt.get():new MantenimientoTipo();
+        Optional<MantenimientoTipo> opt = dao.findById(id);
+        return opt.isPresent() ? opt.get() : new MantenimientoTipo();
     }
 
     @Override
