@@ -2,7 +2,6 @@ package com.grapes.mmotor.service.impl;
 
 import com.grapes.mmotor.dao.IGeneradorDao;
 import com.grapes.mmotor.model.Generador;
-import com.grapes.mmotor.model.MantenimientoTipo;
 import com.grapes.mmotor.service.IGeneradorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +36,7 @@ public class GeneradorServiceImpl implements IGeneradorService {
     }
 
     @Override
-    public List<Generador> listar() {return dao.findAll();
+    public List<Generador> listar() {
+        return dao.findAll();
     }
 }
