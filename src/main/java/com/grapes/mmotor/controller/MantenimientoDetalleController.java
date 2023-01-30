@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/mantenimientodetalle")
+@RequestMapping("/mantenimientosdetalle")
 public class MantenimientoDetalleController {
 
     @Autowired
@@ -27,7 +27,6 @@ public class MantenimientoDetalleController {
         List<MantenimientoDetalle> datos = new ArrayList<>();
         datos = service.listar();
         return new ResponseEntity<List<MantenimientoDetalle>>(datos, HttpStatus.OK);
-
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
