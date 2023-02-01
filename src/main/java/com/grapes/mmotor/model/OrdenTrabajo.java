@@ -1,5 +1,6 @@
 package com.grapes.mmotor.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import jakarta.persistence.*;
@@ -17,6 +18,7 @@ public class OrdenTrabajo {
     @JsonSerialize(using = ToStringSerializer.class)
     @Column(name = "fregistro", nullable = false)
     private LocalDateTime fRegistro;
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id_mantenimiento")
     private Mantenimiento mantenimiento;
