@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/materialcategoria")
+@RequestMapping("/api/v1/materialcategoria")
 public class MaterialCategoriaController {
     @Autowired
     private IMaterialCategoriaService service;

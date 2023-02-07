@@ -15,7 +15,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 @RestController
-@RequestMapping("/api/menus")
+@RequestMapping("/api/v1/menus")
 public class MenuController {
     @Autowired
     private IMenuService service;

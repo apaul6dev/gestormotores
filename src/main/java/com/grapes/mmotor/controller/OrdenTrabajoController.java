@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ordenesTrabajo")
+@RequestMapping("/api/v1/ordenesTrabajo")
 public class OrdenTrabajoController {
 
     @Autowired

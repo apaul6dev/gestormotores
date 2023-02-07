@@ -1,4 +1,8 @@
+server:
+  port: 9091
 spring:
+  application:
+    name: mmotores
   datasource:
     url: jdbc:postgresql://localhost/etapadb
     username: admin

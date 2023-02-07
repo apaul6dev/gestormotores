@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/empresas")
+@RequestMapping("/api/v1/empresas")
 public class EmpresaController {
     @Autowired
     private IEmpresaService service;
