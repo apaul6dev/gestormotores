@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/parametromantenimiento")
+@RequestMapping("/api/parametromantenimiento")
 public class ParametroMantenimientoController {
     @Autowired
     private IParametroMantenimientoService service;

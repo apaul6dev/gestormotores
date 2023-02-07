@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/mantenimientostipo")
+@RequestMapping("/api/mantenimientostipo")
 public class MantenimientoTipoController {
 
     @Autowired

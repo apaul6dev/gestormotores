@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/generador")
+@RequestMapping("/api/generador")
 public class GeneradorController {
 
     @Autowired
