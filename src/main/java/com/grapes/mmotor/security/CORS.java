@@ -12,9 +12,10 @@ public class CORS {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/v1/auth/**")
-                        .allowedOrigins("http://localhost:4200")
+                registry.addMapping("/api/v1/**")
+                        .allowedOrigins("http://192.168.18.52:4200")
                         .allowedMethods("*");
+
             }
         };
     }

@@ -67,4 +67,5 @@ public class OrdenTrabajoController {
         service.modificar(data);
         return new ResponseEntity<Object>(HttpStatus.OK);
     }
+
 }

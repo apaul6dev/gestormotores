@@ -9,9 +9,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterRequest {
+public class UserRegisterRequestDTO {
+    private String username;
+    private String email;
     private String firstname;
     private String lastname;
-    private String email;
     private String password;
+    private String role;
+
 }

@@ -1,13 +1,11 @@
 package com.grapes.mmotor.security.model;
 
-import com.grapes.mmotor.security.emuns.Role;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import com.grapes.mmotor.security.emuns.UserType;
+import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
@@ -28,48 +26,55 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idUser;
+    @Column(name = "username", nullable = false, precision = 50)
+    private String username;
+    @Column(name = "firstname", nullable = false, precision = 50)
     private String firstname;
+    @Column(name = "lastname", nullable = false, precision = 50)
     private String lastname;
+    @Column(name = "email", nullable = false, precision = 50)
     private String email;
+    @Column(name = "password", nullable = false)
     private String password;
+    @Column(name = "enabled", nullable = false)
+    private boolean enabled;
+    @JsonSerialize(using = ToStringSerializer.class)
+    @Column(name = "fdesde", nullable = false)
+    private LocalDateTime fdesde;
+    @ManyToOne
+    @JoinColumn(name = "role", nullable = false)
+    private Role role;
 
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private UserType userType;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return List.of(new SimpleGrantedAuthority(role.getRole()));
     }
 
     @Override
-    public String getPassword() {
-        return password;
-    }
-
+    public String getPassword() { return this.password; }
     @Override
     public String getUsername() {
-        return email;
+        return this.username;
     }
-
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
-
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
-
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
     @Override
     public boolean isEnabled() {
-        return true;
+        return this.enabled;
     }
 }

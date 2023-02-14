@@ -1,9 +1,9 @@
 package com.grapes.mmotor.security.controller;
 
-import com.grapes.mmotor.security.dto.AuthenticationRequest;
-import com.grapes.mmotor.security.dto.AuthenticationResponse;
-import com.grapes.mmotor.security.dto.RegisterRequest;
-import com.grapes.mmotor.security.service.impl.AuthenticationService;
+import com.grapes.mmotor.security.dto.UserAuthenticationRequestDTO;
+import com.grapes.mmotor.security.dto.UserAuthenticationResponseDTO;
+import com.grapes.mmotor.security.dto.UserRegisterRequestDTO;
+import com.grapes.mmotor.security.service.impl.UserAuthenticationServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,19 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
-public class AuthenticationController {
+public class UserAuthenticationController {
 
-    private final AuthenticationService service;
+    private final UserAuthenticationServiceImpl service;
 
     @PostMapping("/register")
-    public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request) {
+    public ResponseEntity<UserAuthenticationResponseDTO> register(@RequestBody UserRegisterRequestDTO request) {
         return ResponseEntity.ok(service.register(request));
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
+    public ResponseEntity<UserAuthenticationResponseDTO> authenticate(@RequestBody UserAuthenticationRequestDTO request) {
         return ResponseEntity.ok(service.authenticate(request));
     }
-
 
 }

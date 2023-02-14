@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/parametro")
+@RequestMapping("/api/v1/parametros")
 public class ParametroController {
 
     @Autowired
